@@ -26,7 +26,7 @@ attr_accessor :first_name, :last_name, :email, :note
 
   # This method should return all of the existing contacts
   def self.all
-
+    @@contacts
   end
 
   # This method should accept an id as an argument
