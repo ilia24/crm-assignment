@@ -53,19 +53,17 @@ attr_accessor :first_name, :last_name, :email, :note
 
   # This method should delete all of the contacts
   def self.delete_all
-
+    @@contacts.clear
   end
 
   def full_name
-
+    return "#{self.first_name} #{self.last_name}"
   end
 
   # This method should delete the contact
   # HINT: Check the Array class docs for built-in methods that might be useful here
   def delete
-
+    @@contacts.delete(self)
   end
-
-  # Feel free to add other methods here, if you need them.
 
 end
