@@ -56,6 +56,7 @@ class CRM
     print 'Enter a Note: '
     note = gets.chomp
 
+
     Contact.create(first_name, last_name, email, note)
   end
 
@@ -64,6 +65,9 @@ class CRM
   end
 
   def delete_contact
+    puts "Please enter the ID of the contact you wish to delete"
+    userid = gets.to_i
+    Contact.find(userid).delete
 
   end
 
