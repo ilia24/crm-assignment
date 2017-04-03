@@ -12,7 +12,7 @@ attr_accessor :first_name, :last_name, :email, :note
     @last_name = last_name
     @email = email
     @note = note
-    @id == @@id
+    @id = @@id
     @@id += 1
   end
 
@@ -31,8 +31,14 @@ attr_accessor :first_name, :last_name, :email, :note
 
   # This method should accept an id as an argument
   # and return the contact who has that id
-  def self.find
+  # def self.find(contactid)
+  #   @@contacts.each do |contact|
+  #     if
+  #
+  # end
 
+  def identify
+    return self.id
   end
 
   # This method should allow you to specify
@@ -63,7 +69,7 @@ attr_accessor :first_name, :last_name, :email, :note
   # This method should delete the contact
   # HINT: Check the Array class docs for built-in methods that might be useful here
   def delete
-    @@contacts.delete(self)
+    @@contacts.delete()
   end
 
 end
