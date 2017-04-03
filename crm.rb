@@ -61,14 +61,42 @@ class CRM
   end
 
   def modify_existing_contact
+    puts "Please enter the ID of the contact you wish to modify"
+    userid = gets.to_i
 
+    if Contact.find(userid) == false
+      puts "Contact not found!"
+    else
+
+    puts "What do you want to modify?"
+    puts '[1] First name'
+    puts '[2] Last name'
+    puts '[3] Email'
+    puts '[4] Note'
+    numbatt = gets.to_i
+
+    case numbatt
+      when 1
+        attribute = "first_name"
+      when 2
+        attribute = "last_name"
+      when 3
+        attribute = "email"
+      when 4
+        attribute = "note"
+    end
+
+    puts "What do you want to set it to?"
+    value = gets.chomp
+
+    Contact.find(userid).update(attribute, value)
+  end
   end
 
   def delete_contact
     puts "Please enter the ID of the contact you wish to delete"
     userid = gets.to_i
     Contact.find(userid).delete
-
   end
 
   def display_all_contacts
