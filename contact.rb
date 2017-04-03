@@ -41,17 +41,21 @@ attr_accessor :first_name, :last_name, :email, :note
     end
   end
 
-#gets class, returns ID
-  # def identify
-  #   return self.id
-  # end
-
   # This method should allow you to specify
   # 1. which of the contact's attributes you want to update
   # 2. the new value for that attribute
   # and then make the appropriate change to the contact
-  def update
-
+  def update(attribute, value)
+    case attribute
+    when "first_name"
+      self.first_name = value
+    when "last_name"
+      self.last_name = value
+    when "email"
+      self.email = value
+    when "note"
+      self.note = value
+    end
   end
 
   # This method should work similarly to the find method above
@@ -74,7 +78,7 @@ attr_accessor :first_name, :last_name, :email, :note
   # This method should delete the contact
   # HINT: Check the Array class docs for built-in methods that might be useful here
   def delete
-    @@contacts.delete()
+    @@contacts.delete(self)
   end
 
 end
