@@ -26,7 +26,20 @@ class CRM
   end
 
   def call_option
-
+    case user_selected
+    when 1
+      add_new_contact
+    when 2
+      modify_existing_contact
+    when 3
+      delete_contact
+    when 4
+      display_all_contacts
+    when 5
+      search_by_attribute
+    when 6
+      abort("Goodbye!")
+    end
   end
 
   def add_new_contact

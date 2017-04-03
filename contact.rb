@@ -1,5 +1,3 @@
-require 'pry'
-
 class Contact
 attr_reader :id
 attr_accessor :first_name, :last_name, :email, :note
