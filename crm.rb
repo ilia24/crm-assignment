@@ -74,7 +74,6 @@ class CRM
   end
 
   def search_by_attribute
-
   end
 
   a_crm_app = CRM.new
