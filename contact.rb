@@ -29,17 +29,22 @@ attr_accessor :first_name, :last_name, :email, :note
     @@contacts
   end
 
-  # This method should accept an id as an argument
-  # and return the contact who has that id
-  # def self.find(contactid)
-  #   @@contacts.each do |contact|
-  #     if
-  #
-  # end
-
-  def identify
-    return self.id
+#accepts ID as an input, and outputs the contact which has that ID (or false)
+  def self.find(contactid)
+    @@contacts.each do |contact|
+      if
+        contact.id == contactid
+        return contact
+      else
+        return false
+      end
+    end
   end
+
+#gets class, returns ID
+  # def identify
+  #   return self.id
+  # end
 
   # This method should allow you to specify
   # 1. which of the contact's attributes you want to update
