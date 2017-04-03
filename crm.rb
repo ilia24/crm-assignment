@@ -3,6 +3,7 @@ require_relative 'contact'
 
 class CRM
 
+
   def initialize
 
   end
@@ -25,7 +26,7 @@ class CRM
     puts 'Enter a number: '
   end
 
-  def call_option
+  def call_option(user_selected)
     case user_selected
     when 1
       add_new_contact
@@ -43,7 +44,19 @@ class CRM
   end
 
   def add_new_contact
+    print 'Enter First Name: '
+    first_name = gets.chomp
 
+    print 'Enter Last Name: '
+    last_name = gets.chomp
+
+    print 'Enter Email Address: '
+    email = gets.chomp
+
+    print 'Enter a Note: '
+    note = gets.chomp
+
+    Contact.create(first_name, last_name, email, note)
   end
 
   def modify_existing_contact
@@ -62,5 +75,7 @@ class CRM
 
   end
 
+  a_crm_app = CRM.new
+  a_crm_app.main_menu
 
 end
