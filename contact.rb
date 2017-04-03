@@ -1,3 +1,5 @@
+require 'pry'
+
 class Contact
 attr_reader :id
 attr_accessor :first_name, :last_name, :email, :note
@@ -32,13 +34,11 @@ attr_accessor :first_name, :last_name, :email, :note
 #accepts ID as an input, and outputs the contact which has that ID (or false)
   def self.find(contactid)
     @@contacts.each do |contact|
-      if
-        contact.id == contactid
+      if contact.id == contactid
         return contact
-      else
-        return false
       end
     end
+    false
   end
 
   # This method should allow you to specify
